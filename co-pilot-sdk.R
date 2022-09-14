@@ -7,6 +7,9 @@ outputFileName = "./data/output/output.rds"
 
 args <- list()
 
+# enable better error reporting during development
+options(error = function() traceback(3))
+
 #################################################################
 ########################### Arguments ###########################
 # The data parameter will be added automatically if input data is available
