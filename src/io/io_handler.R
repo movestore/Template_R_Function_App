@@ -8,7 +8,7 @@ readInput <- function(sourceFile) {
 storeResult <- function(result, outputFile) {
     outputType <- Sys.getenv(x = "OUTPUT_TYPE", "move::moveStack")
     # for now every output-type can be written via RDS
-    logger.debug("Write input of type '%s'", outputType)
+    logger.debug("Write output of type '%s'", outputType)
     return(storeRdsOutput(result, outputFile))
 }
 
