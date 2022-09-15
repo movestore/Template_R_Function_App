@@ -2,7 +2,7 @@
 # MoveApps R SDK aka co-pilot-r
 ########################################################################################################################
 
-FROM rocker/geospatial:4.1.2
+FROM rocker/geospatial:4.2.1
 
 LABEL maintainer = "couchbits GmbH <us@couchbits.com>"
 
