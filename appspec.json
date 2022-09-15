@@ -1,7 +1,7 @@
 {
   "settings": [
     {
-      "id": "testString",
+      "id": "username",
       "name": "Insert title of string setting",
       "description": "Insert description for string setting",
       "defaultValue": null,
