@@ -23,13 +23,13 @@ args <- list()
 args[["year"]] = 2014 
 
 # tie everything together
-# the following files will NOT bundled into the final app - they are just helpers for the SDK
+# the following files will NOT bundled into the final app - they are just helpers in the SDK
 source("src/common/logger.R")
 source("src/io/app_files.R")
 source("src/io/io_handler.R")
 source("src/io/rds.R")
 source("src/moveapps.R")
-# this file comes from the app developer and will be bundled into the final app
+# this file is the home of your app code and will be bundled into the final app on MoveApps
 source("RFunction.R")
 
 # setup your environment

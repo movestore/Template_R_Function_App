@@ -1,4 +1,4 @@
-# simulate a app run on moveapps.org
+# simulate an app run on moveapps.org
 
 simulateMoveAppsRun <- function(args) {
     tryCatch(
