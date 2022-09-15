@@ -1,31 +1,11 @@
 {
   "settings": [
     {
-      "id": "username",
-      "name": "Insert title of string setting",
-      "description": "Insert description for string setting",
-      "defaultValue": null,
-      "type": "STRING"
-    },
-    {
-      "id": "testInstant",
-      "name": "Insert title of instant setting",
-      "description": "Insert description for instant setting",
-      "defaultValue": null,
-      "type": "INSTANT"
-    },
-    {
-      "id": "testString2",
-      "name": "Insert title of String setting",
-      "description": "Insert description for string setting",
-      "defaultValue": null,
-      "type": "RADIOBUTTONS",
-      "options": [
-        {
-          "value": "example-value",
-          "displayText": "Example option"
-        }
-      ]
+      "id": "year",
+      "name": "The year.",
+      "description": "Insert description for the year setting setting",
+      "defaultValue": 2022,
+      "type": "INTEGER"
     }
   ],
   "dependencies": {
