@@ -1,7 +1,7 @@
 {
   "settings": [
     {
-      "id": "testString",
+      "id": "username",
       "name": "Insert title of string setting",
       "description": "Insert description for string setting",
       "defaultValue": null,
@@ -65,15 +65,15 @@
   ],
   "funding": [
     {
-	"name": "funder name",
-	"comment": "grant for App"
+      "name": "funder name",
+      "comment": "grant for App"
     }
   ],
   "references": [
     {
-	"type": "IsDescribedBy",
-	"note": "Darwin, C. 1900. The creation. Journal XY. 1-2",
-	"url": "https://anylink.xyz"
+      "type": "IsDescribedBy",
+      "note": "Darwin, C. 1900. The creation. Journal XY. 1-2",
+      "url": "https://anylink.xyz"
     }
   ],
   "documentation": {
