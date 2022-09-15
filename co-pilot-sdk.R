@@ -34,6 +34,6 @@ source("src/moveapps.R")
 source("RFunction.R")
 
 # set your environment
-Sys.setenv(SOURCE_FILE = inputFileName, OUTPUT_FILE = outputFile, ERROR_FILE="./data/output/error.log")
+Sys.setenv(SOURCE_FILE = inputFileName, OUTPUT_FILE = outputFile, ERROR_FILE="./data/output/error.log", APP_ARTIFACTS_DIR ="./data/output/artifacts")
 
 simulateMoveAppsRun(args)
