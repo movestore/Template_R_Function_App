@@ -22,6 +22,15 @@ args <- list()
 # Add your arguments of your r-function here
 args[["year"]] = 2014 
 
+#####################################################################
+#####################################################################
+## DO NOT MODIFY THE SOURCED CODES BELOW!  
+## All the sourced codes below simulates the MoveApps environment  ##
+## to enable testing an App locally.                               ##
+## Hit "Source" (top right of this panel) to run this script.      ##
+## DO NOT MODIFY THE SOURCED CODES BELOW!   
+#####################################################################
+#####################################################################
 # tie everything together
 # the following files will NOT bundled into the final app - they are just helpers in the SDK
 source("src/common/logger.R")
