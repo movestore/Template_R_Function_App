@@ -1,5 +1,11 @@
-# simulate an app run on moveapps.org
+# tie everything together
+# the following files will NOT bundled into the final app - they are just helpers in the SDK
+source("src/common/logger.R")
+source("src/io/app_files.R")
+source("src/io/io_handler.R")
+source("src/io/rds.R")
 
+# simulate an app run on moveapps.org
 simulateMoveAppsRun <- function(args) {
     tryCatch(
     {

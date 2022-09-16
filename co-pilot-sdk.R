@@ -1,12 +1,9 @@
 ## Provided testing datasets in `./data/raw`: 
 ## "input1_pigeons.rds", "input2_geese.rds", "input3_stork.rds", "input4_goat.rds"  
 ## for own data: file saved as a .rds containing a object of class MoveStack
-inputFileName = "./data/raw/input1_pigeons.rds" 
+inputFileName = "./data/raw/input2_geese.rds" 
 ## optionally change the output file name
 outputFileName = "./data/output/output.rds" 
-
-# enable better error reporting during development
-options(error = function() traceback(3))
 
 #################################################################
 ########################### Arguments ###########################
@@ -22,22 +19,6 @@ args <- list()
 # Add your arguments of your r-function here
 args[["year"]] = 2014 
 
-#####################################################################
-#####################################################################
-## DO NOT MODIFY THE SOURCED CODES BELOW!  
-## All the sourced codes below simulates the MoveApps environment  ##
-## to enable testing an App locally.                               ##
-## Hit "Source" (top right of this panel) to run this script.      ##
-## DO NOT MODIFY THE SOURCED CODES BELOW!   
-#####################################################################
-#####################################################################
-# tie everything together
-# the following files will NOT bundled into the final app - they are just helpers in the SDK
-source("src/common/logger.R")
-source("src/io/app_files.R")
-source("src/io/io_handler.R")
-source("src/io/rds.R")
-source("src/moveapps.R")
 # this file is the home of your app code and will be bundled into the final app on MoveApps
 source("RFunction.R")
 
@@ -50,4 +31,5 @@ Sys.setenv(
 )
 
 # simulate running your app on MoveApps
+source("src/moveapps.R")
 simulateMoveAppsRun(args)
