@@ -7,7 +7,8 @@
 inputFileName = "./data/raw/input2_geese.rds" 
 
 ## optionally change the output file name
-dir.create("./data/output/") 
+unlink("./data/output/", recursive = TRUE) # delete "output" folder if it exists, to have a clean start for every run
+dir.create("./data/output/") # create a new output folder
 outputFileName = "./data/output/output.rds" 
 
 ##########################
