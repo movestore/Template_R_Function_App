@@ -2,9 +2,8 @@
 ## input/output ## adjust!
 ##################
 ## Provided testing datasets in `./data/raw`: 
-## "input1_pigeons.rds", "input2_geese.rds", "input3_stork.rds", "input4_goat.rds"  
 ## for own data: file saved as a .rds containing a object of class MoveStack
-inputFileName = "./data/raw/input2_geese.rds" 
+inputFileName = "./data/raw/input1_greygeese.rds" 
 
 ## optionally change the output file name
 unlink("./data/output/", recursive = TRUE) # delete "output" folder if it exists, to have a clean start for every run
@@ -37,7 +36,7 @@ Sys.setenv(
     SOURCE_FILE = inputFileName, 
     OUTPUT_FILE = outputFileName, 
     ERROR_FILE="./data/output/error.log", 
-    APP_ARTIFACTS_DIR ="./data/output/artifacts"
+    APP_ARTIFACTS_DIR ="./data/output/"
 )
 
 # simulate running your app on MoveApps
