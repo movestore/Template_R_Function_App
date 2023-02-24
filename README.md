@@ -30,6 +30,9 @@ Github repository: *github.com/yourAccount/Name-of-App* *(the link to the reposi
 
 *Example:* `radius`: Defined radius the animal has to stay in for a given duration of time for it to be considered resting site. Unit: `metres`.
 
+### Most common errors
+*Please describe shortly what most common errors of the App can be, how they occur and best ways of solving them.*
+
 ### Null or error handling
 *Please indicate for each parameter as well as the input data which behaviour the App is supposed to show in case of errors or NULL values/input. Please also add notes of possible errors that can happen if parameters are improperly set and any other important information that you find the user should be aware of.*
 
