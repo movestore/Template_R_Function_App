@@ -4,7 +4,7 @@ library(dotenv)
 # Per default your environment is defined in `/.env`
 load_dot_env()
 
-# `RFunction.R` is the home of your app code
+# `./RFunction.R` is the home of your app code
 # It is the only file which will be bundled into the final app on MoveApps
 source("RFunction.R")
 
