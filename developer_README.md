@@ -4,7 +4,7 @@
 
 - get an overview with the help of the [user manual](https://docs.moveapps.org/#/create_app)
 - files needed for your app:
-  - your app codes goes to `./RFunction.R`
+  - your app code goes to `./RFunction.R`
   - setup your app arguments and your environment by adjusting `./appspec.json`
   - the documentation of your app goes to `./README.md`
 - to run and test your app code locally in a simulated MoveApps environment adjust and execute the file `./co-pilot-sdk.R`
@@ -13,9 +13,8 @@
 
 ### R packages management (optional)
 
-The template is prepared to use [`renv` as a dependency manager](https://rstudio.github.io/renv/articles/renv.html) - but is disabled ("opt-in") by default.    
+The template is prepared to use [`renv` as a dependency manager](https://rstudio.github.io/renv/articles/renv.html) - but is disabled by default (_opt-in_).
 You can [activate `renv` with `renv::activate()`](https://rstudio.github.io/renv/articles/renv.html#uninstalling-renv) and then use it in the [usual `renv` workflow](https://rstudio.github.io/renv/articles/renv.html#workflow).
-
 
 ### Docker support (optional)
 
