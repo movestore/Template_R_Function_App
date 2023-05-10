@@ -154,6 +154,28 @@ test_that("year not included", {
 })
 ```
 
+### Produce an App artefact
+
+Your App can write files which the user can download after it has run.
+
+`./appspec.json`
+
+```
+  "createsArtifacts": true,
+```
+
+`./RFunction.R`
+
+```
+pdf(appArtifactPath("MorningReport_overviewTable.pdf"), paper = "a4r")
+```
+
+## Include files to your App
+
+[Details and examples about _auxiliary files_](https://docs.moveapps.org/#/auxiliary)
+
+---
+
 ## R packages management / renv (optional)
 
 The template is prepared to use [`renv` as a dependency manager](https://rstudio.github.io/renv/articles/renv.html) - but is disabled by default (_opt-in_).
