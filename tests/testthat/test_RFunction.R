@@ -1,5 +1,3 @@
-sut()
-
 test_data <- test_data("input3_stork.rds")
 
 test_that("happy path", {

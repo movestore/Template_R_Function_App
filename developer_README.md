@@ -141,7 +141,17 @@ rFunction = function(data, line_width, legend, ...) {
 `./tests/testthat/test_RFunction.R`: do not forget to test your App
 
 ```
-TODO
+test_data <- test_data("input3_stork.rds")
+
+test_that("happy path", {
+  actual <- rFunction(data = test_data, sdk = "unit test", year = 2005)
+  expect_equal(unique(lubridate::year(actual@timestamps)), 2005)
+})
+
+test_that("year not included", {
+  actual <- rFunction(data = test_data, sdk = "unit test", year = 2023)
+  expect_null(actual)
+})
 ```
 
 ## R packages management / renv (optional)
