@@ -1,4 +1,4 @@
-test_data <- test_data("input3_stork.rds")
+test_data <- test_data("input3.rds")
 
 test_that("happy path", {
   actual <- rFunction(data = test_data, sdk = "unit test", year = 2005)
