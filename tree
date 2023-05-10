@@ -1,0 +1,35 @@
+.
+├── Dockerfile
+├── README.md
+├── RFunction.R
+├── Template_R_Function_App.Rproj
+├── app-configuration.json
+├── appspec.json
+├── data
+│   ├── local_app_files
+│   │   ├── provided-app-files
+│   │   │   └── yourLocalFileSettingId
+│   │   └── uploaded-app-files
+│   ├── output
+│   │   └── error.log
+│   └── raw
+│       ├── input1_greylgeese.rds
+│       ├── input2_whitefgeese.rds
+│       ├── input3_stork.rds
+│       └── input4_goat.rds
+├── developer_README.md
+├── renv.lock
+├── sdk.R
+├── src
+│   ├── common
+│   │   ├── logger.R
+│   │   └── runtime_configuration.R
+│   ├── io
+│   │   ├── app_files.R
+│   │   ├── io_handler.R
+│   │   └── rds.R
+│   └── moveapps.R
+├── start-process.sh
+└── tree
+
+11 directories, 22 files
