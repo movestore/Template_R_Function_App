@@ -4,6 +4,8 @@ This documentation provides a short introduction to the [MoveApps](https://www.m
 
 As a first step, and before your read this, you should have forked this GitHub template to your personal space and named the repository as your App will be named in MoveApps.
 
+A general overview provides the [MoveApps user manual](https://docs.moveapps.org/#/create_app)
+
 # Overview
 
 This template is designed according to a file structure that is necessary for your App to run in your local development environment similar to the way it will run in the MoveApps environment later. Please contain the structure and only change/add files as necessary for your App's functionality. See below which files can be changed and which should remain as is for simulation of the behaviour on MoveApps on your local system. A stepwise explanation below indicates the function and some background of each file and folder.
@@ -13,7 +15,6 @@ This template is designed according to a file structure that is necessary for yo
 (truncated)
 
 ```
-
 .
 ├── Dockerfile
 ├── README.md
@@ -54,20 +55,96 @@ This template is designed according to a file structure that is necessary for yo
    1. `raw/**`: Collection of sample App input data. You can use these samples to simulate an App run with real input.
 1. `./sdk/**`: The (internal) MoveApps R SDK logic.
 1. `./sdk.R`: The main entry point of the SDK. Use it to execute your App in your IDE.
-1. TODO: `./tests/**`: Location for **Unit Tests**
+1. `./tests/**`: Location for Unit Tests
 
-### General notes
+## SDK Runtime environment
 
-- get an overview with the help of the [user manual](https://docs.moveapps.org/#/create_app)
-- files needed for your app:
-  - your app code goes to `./RFunction.R`
-  - setup your app arguments and your environment by adjusting `./appspec.json`
-  - the documentation of your app goes to `./README.md`
-- to run and test your app code locally in a simulated MoveApps environment adjust and execute the file `./co-pilot-sdk.R`
-  - adjust the `inputFileName`
-  - state the arguments of your function if present
+Critical parts of the SDK can be adjusted by `environment variables`. 
+Keep in mind that these variables are only changeable during App development and not during an App run on MoveApps.
+They are predefined with sensible defaults - they should work for you as they are.
 
-### R packages management (optional)
+- `SOURCE_FILE`: path to input file for your App during development
+- `CONFIGURATION_FILE`: configuration of your App ([JSON](https://www.w3schools.com/js/js_json_intro.asp) - must correspondent with the `settings` of your `appspec.json`)
+- `PRINT_CONFIGURATION`: prints the configuration your App receives (`yes|no`)
+- `LOCAL_APP_FILES_DIR`: base directory of your local App files (*auxiliary*)
+- `OUTPUT_FILE`: path to output file of your App
+- `APP_ARTIFACTS_DIR`: base directory for writing App artifacts
+
+You can adjust these environment variables by adjusting the file `./.env`.
+
+The file `./.env` is **hidden** by default in `RStudio`! You can show it by
+
+1. Tab `Files` in `RStudio`
+1. `More` Button in the Files-Toolbar
+1. Activate _Show Hidden Files_
+
+## MoveApps App Bundle
+
+Which files will be bundled into the final App running on MoveApps?
+
+- the file `./RFunction.R`
+- all directories defined in your `appspec.json` at `providedAppFiles` 
+
+Nothing else.
+
+## App development
+
+1. Execute `Rscript sdk.R` (on a terminal) or run/source `sdk.R` in _RStudio_
+1. Ensure the sdk executes the vanilla template App code. Everything is set up correctly if no error occurs and you see something like _Welcome to the MoveApps R SDK._
+1. Begin with your App development in `./RFunction.R`
+
+## Examples
+
+### Request App configuration from your users
+
+`./appspec.json`: define the settings UI on MoveApps. Users of your App can enter their configuration values.
+
+![img.png](documentation/app-configuration-ui.png)
+
+You can also use our [Settings Editor](https://www.moveapps.org/apps/settingseditor) to generate the App configuration
+
+```
+"settings": [
+ {
+   "id": "line_width",
+   "name": "Line width",
+   "description": "The width of the lines in the plot.",
+   "defaultValue": 2,
+   "type": "INTEGER"
+ },
+ {
+   "id": "legend",
+   "name": "Include legend?",
+   "description": "Should the plot contain a legend?",
+   "defaultValue": false,
+   "type": "CHECKBOX"
+ }
+],
+```
+
+`./app-configuration.json`: this is only needed during the app development to simulate an App run
+
+```
+{
+  "line_width": 2,
+  "legend": true
+}
+```
+
+`./RFunction.R`: your App will be called with the user's App configuration
+
+```
+rFunction = function(data, line_width, legend, ...) {
+}
+```
+
+`./tests/testthat/test_RFunction.R`: do not forget to test your App
+
+```
+TODO
+```
+
+## R packages management / renv (optional)
 
 The template is prepared to use [`renv` as a dependency manager](https://rstudio.github.io/renv/articles/renv.html) - but is disabled by default (_opt-in_).
 You can [activate `renv` with `renv::activate()`](https://rstudio.github.io/renv/articles/renv.html#uninstalling-renv) and then use it in the [usual `renv` workflow](https://rstudio.github.io/renv/articles/renv.html#workflow).
@@ -77,6 +154,7 @@ You can [activate `renv` with `renv::activate()`](https://rstudio.github.io/renv
 - at the end your app will be executed on MoveApps in a Docker container.
 - if you like you can test your app in the almost final environment by running your app locally in a docker container:
 
+1. enable `renv` (see above)
 1. set a working title for your app by `export MY_MOVEAPPS_APP=hello-world` (in your terminal)
 1. build the Docker image locally by `docker build -t $MY_MOVEAPPS_APP .` (in your terminal)
 1. execute the image with `docker run --rm --name $MY_MOVEAPPS_APP -it $MY_MOVEAPPS_APP`

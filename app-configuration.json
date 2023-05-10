@@ -1,8 +1,4 @@
 {
-    "MoveApps": "R SDK",
-    "pointInTime": "2023-05-09T14:56:12+02:00",
-    "year": 2020,
-    "option": "option two",
-    "flag": false,
-    "notSet": null
+    "sdk": "MoveApps R SDK",
+    "year": 2023
 }
