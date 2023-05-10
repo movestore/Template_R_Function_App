@@ -8,5 +8,9 @@ library('lubridate')
 
 rFunction = function(data, sdk, year, ...) {
   logger.info(paste("Welcome to the", sdk))
-  data[lubridate::year(data@timestamps) == year]
+  if (any(lubridate::year(data@timestamps) == year)) { 
+    data[lubridate::year(data@timestamps) == year]
+  } else {
+    NULL
+  }
 }
