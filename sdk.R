@@ -4,11 +4,13 @@ library(dotenv)
 # Per default your environment is defined in `/.env`
 load_dot_env()
 
-# Lets simulate running your app on MoveApps
+# provide common stuff
+source("src/common/logger.R")
 source("src/common/runtime_configuration.R")
 # This will parse a JSON file containing the concrete configuration of
 # the app run. Per default the file `/app-configuration.json` will be parsed.
 args <- configuration()
 
+# Lets simulate running your app on MoveApps
 source("src/moveapps.R")
 simulateMoveAppsRun(args)
