@@ -1,4 +1,5 @@
 library('move')
+library('lubridate')
 
 ## The parameter "data" is reserved for the data object passed on from the previous app
 
@@ -6,6 +7,6 @@ library('move')
 # logger.fatal(), logger.error(), logger.warn(), logger.info(), logger.debug(), logger.trace()
 
 rFunction = function(data, sdk, year, ...) {
-  logger.info("Welcome to the {sdk}")
+  logger.info(paste("Welcome to the", sdk))
   data[lubridate::year(data@timestamps) == year]
 }
