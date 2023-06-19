@@ -8,9 +8,20 @@ library('lubridate')
 
 rFunction = function(data, sdk, year, ...) {
   logger.info(paste("Welcome to the", sdk))
-  if (any(lubridate::year(data@timestamps) == year)) { 
+  result <- if (any(lubridate::year(data@timestamps) == year)) { 
     data[lubridate::year(data@timestamps) == year]
   } else {
     NULL
   }
+  if (!is.null(result)) {
+    artifact <- appArtifactPath("plot.png")
+    logger.info(paste("plotting to artifact:", artifact))
+    png(artifact)
+    plot(result)
+    dev.off()
+  } else {
+    logger.warn("nothing to plot")
+  }
+  # provide my result to the next app in the MoveApps workflow
+  return(result)
 }
