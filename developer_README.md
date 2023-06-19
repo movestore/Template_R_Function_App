@@ -2,7 +2,7 @@
 
 This documentation provides a short introduction to the [MoveApps](https://www.moveapps.org) **R SDK**.
 
-As a first step, and before your read this, you should have forked this GitHub template to your personal space and named the repository as your App will be named in MoveApps.
+As a first step, and before your read this, you should have used this GitHub template to create a copy of it in your personal space and named the repository as your App will be named in MoveApps.
 
 A general overview provides the [MoveApps user manual](https://docs.moveapps.org/#/create_app)
 
