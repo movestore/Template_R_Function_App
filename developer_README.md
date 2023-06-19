@@ -193,3 +193,7 @@ You can [activate `renv` with `renv::activate()`](https://rstudio.github.io/renv
 1. build the Docker image locally by `docker build -t $MY_MOVEAPPS_APP .` (in your terminal)
 1. execute the image with `docker run --rm --name $MY_MOVEAPPS_APP -it $MY_MOVEAPPS_APP`
 1. you will get a `bash` terminal of the running container. There you can get a R console by `R` or simply start your app by invoking `/home/moveapps/co-pilot-r/start-process.sh` inside the running container.
+
+## Synchronisation of your fork with this template
+
+This template includes a _GitHub action_ to keep your fork synchronized with the original template (aka the MoveApps R SDK). The synchronization action creates a _GitHub pull request_ in your fork from time to time in case the orginial template has changed.
