@@ -170,6 +170,8 @@ Your App can write files which the user can download after it has run.
 pdf(appArtifactPath("MorningReport_overviewTable.pdf"), paper = "a4r")
 ```
 
+**Notice:** Only files are permitted to act as MoveApps App artifact! If your app produces a directory as an App artificat you have to bundle it eg. by zipping it. In other words: at the moment your App completes its work there must be only files present in `APP_ARTIFACTS_DIR`.
+
 ## Include files to your App
 
 [Details and examples about _auxiliary files_](https://docs.moveapps.org/#/auxiliary)
