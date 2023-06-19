@@ -2,7 +2,7 @@
 
 This documentation provides a short introduction to the [MoveApps](https://www.moveapps.org) **R SDK**.
 
-As a first step, and before your read this, you should have forked this GitHub template to your personal space and named the repository as your App will be named in MoveApps.
+As a first step, and before your read this, you should have used this GitHub template to create a copy of it in your personal space and named the repository as your App will be named in MoveApps.
 
 A general overview provides the [MoveApps user manual](https://docs.moveapps.org/#/create_app)
 
@@ -82,10 +82,13 @@ The file `./.env` is **hidden** by default in `RStudio`! You can show it by
 
 Which files will be bundled into the final App running on MoveApps?
 
-- the file `./RFunction.R`
+- the file `./RFunction.R
 - all directories defined in your `appspec.json` at `providedAppFiles` 
 
 Nothing else.
+
+Note that many App features will be set and updated with information from the `appspec.json` in each new App version. Thus, even if not bundled into the App, this file is required and must be up to date.
+
 
 ## App development
 
