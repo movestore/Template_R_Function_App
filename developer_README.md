@@ -83,6 +83,7 @@ The file `./.env` is **hidden** by default in `RStudio`! You can show it by
 Which files will be bundled into the final App running on MoveApps?
 
 - the file `./RFunction.R`
+- the file `appspec.json`
 - all directories defined in your `appspec.json` at `providedAppFiles` 
 
 Nothing else.
