@@ -283,7 +283,7 @@
     "move": {
       "Package": "move",
       "Version": "4.1.6",
-      "Source": "CRAN",
+      "Source": "Repository",
       "Repository": "RSPM",
       "RemoteType": "standard",
       "RemotePkgRef": "move",
@@ -406,10 +406,10 @@
     },
     "renv": {
       "Package": "renv",
-      "Version": "0.15.4",
+      "Version": "0.16.0",
       "Source": "Repository",
-      "Repository": "RSPM",
-      "Hash": "c1078316e1d4f70275fc1ea60c0bc431",
+      "Repository": "CRAN",
+      "Hash": "c9e8442ab69bc21c9697ecf856c1e6c7",
       "Requirements": []
     },
     "rgdal": {
