@@ -26,10 +26,10 @@ This template is designed according to a file structure that is necessary for yo
 │   ├── local_app_files
 │   ├── output
 │   └── raw
-│       ├── input1_greylgeese.rds
-│       ├── input2_whitefgeese.rds
-│       ├── input3_stork.rds
-│       └── input4_goat.rds
+│       ├── input1.rds
+│       ├── input2.rds
+│       ├── input3.rds
+│       └── input4.rds
 ├── renv.lock
 ├── sdk.R
 ├── src
