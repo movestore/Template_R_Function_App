@@ -177,7 +177,9 @@ pdf(appArtifactPath("MorningReport_overviewTable.pdf"), paper = "a4r")
 
 ## Include files to your App
 
-[Details and examples about _auxiliary files_](https://docs.moveapps.org/#/auxiliary)
+[Details and examples about _auxiliary files_](https://docs.moveapps.org/#/auxiliary).
+
+This template also implements in `./RFunction.R` a showcase about this topics.
 
 ---
 
