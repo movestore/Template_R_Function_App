@@ -194,8 +194,8 @@ You can [activate `renv` with `renv::activate()`](https://rstudio.github.io/renv
 1. enable `renv` (see above)
 1. set a working title for your app by `export MY_MOVEAPPS_APP=hello-world` (in your terminal)
 1. build the Docker image locally by `docker build --platform=linux/amd64 -t $MY_MOVEAPPS_APP .` (in your terminal)
-1. execute the image with `docker run --platform=linux/amd64 --rm --name $MY_MOVEAPPS_APP -it $MY_MOVEAPPS_APP`
-1. you will get a `bash` terminal of the running container. There you can get a R console by `R` or simply start your app by invoking `/home/moveapps/co-pilot-r/start-process.sh` inside the running container.
+1. execute the image with `docker run --platform=linux/amd64 --rm --name $MY_MOVEAPPS_APP -it $MY_MOVEAPPS_APP` (in your terminal)
+1. you will get a `bash` terminal of the running container. There you can get a R console by `R` or simply start your app by invoking `/home/moveapps/co-pilot-r/start-process.sh` (in the `bash` of the running container)
 
 ## Synchronisation of your fork with this template
 
