@@ -6,6 +6,12 @@
       "description": "Insert description for the year setting setting",
       "defaultValue": 2022,
       "type": "INTEGER"
+    },
+    {
+      "id": "yourLocalFileSettingId",
+      "name": "Personalization",
+      "description": "You can personalize the dashboard by providing a file named 'sample.txt'",
+      "type": "LOCAL_FILE"
     }
   ],
   "dependencies": {
@@ -20,6 +26,12 @@
     ]
   },
   "createsArtifacts": true,
+  "providedAppFiles": [
+    {
+      "settingId": "yourLocalFileSettingId",
+      "from": "data/local_app_files/provided-app-files/yourLocalFileSettingId/"
+    }
+  ],
   "license": {
     "key": "MIT"
   },
