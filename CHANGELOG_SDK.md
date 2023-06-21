@@ -3,6 +3,7 @@
 ## 2023-06 `v3.0.1`
 
 - fix app-configuration for execution on moveapps.org
+- clear app output of previously app run at each start of the SDK
 
 ## 2023-06 `v3.0.0`
 
