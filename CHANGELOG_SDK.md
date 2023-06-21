@@ -1,6 +1,10 @@
 # Changelog SDK
 
-## 2023-06-21 `v3.0.0`
+## 2023-06 `v3.0.1`
+
+- fix app-configuration for execution on moveapps.org
+
+## 2023-06 `v3.0.0`
 
 - introduces template versioning (starting w/ `v3.0.0` as this is the third major iteraction)
 - introduces `dotenv` to control/adjust local app-development
