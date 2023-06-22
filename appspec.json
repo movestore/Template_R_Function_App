@@ -24,11 +24,10 @@
   "dependencies": {
     "R": [
       {
-        "name": "lubridate",
-        "version": "1.7.10"
+        "name": "lubridate"
       },
       {
-        "name": "move"
+        "name": "move2"
       }
     ]
   },
