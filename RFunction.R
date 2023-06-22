@@ -1,3 +1,4 @@
+library('move2')
 library('lubridate')
 
 ## The parameter "data" is reserved for the data object passed on from the previous app
