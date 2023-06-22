@@ -9,8 +9,8 @@ library('lubridate')
 # Showcase injecting app setting (parameter `year`)
 rFunction = function(data, sdk, year, ...) {
   logger.info(paste("Welcome to the", sdk))
-  result <- if (any(lubridate::year(data@timestamps) == year)) { 
-    data[lubridate::year(data@timestamps) == year]
+  result <- if (any(lubridate::year(mt_time(data)) == year)) { 
+    data[lubridate::year(mt_time(data)) == year,]
   } else {
     NULL
   }
