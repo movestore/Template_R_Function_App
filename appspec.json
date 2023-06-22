@@ -27,6 +27,9 @@
         "name": "lubridate"
       },
       {
+        "name": "move"
+      },
+            {
         "name": "move2"
       }
     ]
