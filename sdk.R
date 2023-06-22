@@ -7,6 +7,7 @@ load_dot_env()
 # provide common stuff
 source("src/common/logger.R")
 source("src/common/runtime_configuration.R")
+clearRecentOutput()
 # This will parse a JSON file containing the concrete configuration of
 # the app run. Per default the file `/app-configuration.json` will be parsed.
 args <- configuration()
