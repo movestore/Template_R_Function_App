@@ -1,11 +1,17 @@
 # Changelog SDK
 
-## 2023-06-20 `v3.1.0`
+## 2023-06-22 `v3.1.0`
 
 - SDK supports [`move2`](https://gitlab.com/bartk/move2/) and prefers it over [`move`](https://gitlab.com/bartk/move/).
 - Upgrade `R` framework to `4.3.1`
 
-## 2023-05-11 `v3.0.0`
+## 2023-06-21 `v3.0.1`
+
+- fix app-configuration for execution on moveapps.org
+- clear app output of previously app run at each start of the SDK
+
+## 2023-06-20 `v3.0.0`
+
 
 - introduces template versioning (starting w/ `v3.0.0` as this is the third major iteraction)
 - introduces `dotenv` to control/adjust local app-development

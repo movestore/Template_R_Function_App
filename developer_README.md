@@ -69,6 +69,7 @@ They are predefined with sensible defaults - they should work for you as they ar
 - `LOCAL_APP_FILES_DIR`: base directory of your local App files (*auxiliary*)
 - `OUTPUT_FILE`: path to output file of your App
 - `APP_ARTIFACTS_DIR`: base directory for writing App artifacts
+- `CLEAR_OUTPUT`: clears all output of the previously app run at each start of the SDK aka the next app start
 
 You can adjust these environment variables by adjusting the file `./.env`.
 
@@ -174,6 +175,19 @@ pdf(appArtifactPath("MorningReport_overviewTable.pdf"), paper = "a4r")
 ```
 
 **Notice:** Only files are permitted to act as MoveApps App artifact! If your app produces a directory as an App artificat you have to bundle it eg. by zipping it. In other words: at the moment your App completes its work there must be only files present in `APP_ARTIFACTS_DIR`.
+
+#### example for zipping:
+```
+library('zip')
+dir.create(targetDirFiles <- tempdir())
+...
+# add any files to targetDirFiles
+...
+zip_file <- appArtifactPath(paste0("myfiles.zip"))
+zip::zip(zip_file, 
+    files = list.files(targetDirFiles, full.names = TRUE),
+    mode = "cherry-pick")
+```
 
 ## Include files to your App
 
