@@ -1,5 +1,16 @@
 # Changelog SDK
 
+## 2023-07 `v3.1.0`
+
+- provide new move2 input files
+- minor fixes in src/io files
+
+NOT YET RELEASED!
+
+
+
+
+
 ## 2023-06 `v3.0.0`
 
 - introduces template versioning (starting w/ `v3.0.0` as this is the third major iteraction)
