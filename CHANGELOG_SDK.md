@@ -2,7 +2,7 @@
 
 ## 2023-08 `v3.0.2`
 
-- added default IO-Type declaration for input and output file into `.env`
+- removed MoveApps IO-Type dependency
 
 ## 2023-07 `v3.0.1`
 

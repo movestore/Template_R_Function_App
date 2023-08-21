@@ -66,9 +66,7 @@ They are predefined with sensible defaults - they should work for you as they ar
 - `CONFIGURATION_FILE`: configuration of your App ([JSON](https://www.w3schools.com/js/js_json_intro.asp) - must correspondent with the `settings` of your `appspec.json`)
 - `PRINT_CONFIGURATION`: prints the configuration your App receives (`yes|no`)
 - `SOURCE_FILE`: path to an input file for your App during development
-- `INPUT_TYPE`: the [MoveApps IO-Type](https://github.com/movestore/cargo-agent-r) of the input of your App aka the type of the source file (`SOURCE_FILE`)
 - `OUTPUT_FILE`: path to the output file of your App
-- `OUTPUT_TYPE`: the [MoveApps IO-Type](https://github.com/movestore/cargo-agent-r) of the output of your App aka the type of the output file (`OUTPUT_FILE`)
 - `ERROR_FILE`: path to a file collecting error messages
 - `APP_ARTIFACTS_DIR`: base directory for writing App artifacts
 - `LOCAL_APP_FILES_DIR`: base directory of your local App files (*auxiliary*)
