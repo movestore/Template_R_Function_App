@@ -1,5 +1,10 @@
 # Changelog SDK
 
+
+## 2023-09 `v3.0.3`
+
+- introduce `appspec.json` version `1.1`
+
 ## 2023-08 `v3.0.2`
 
 - removed MoveApps IO-Type dependency
