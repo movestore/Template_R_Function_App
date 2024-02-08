@@ -67,16 +67,6 @@
       ],
       "Hash": "ae6cbbe1492f4de79c45fce06f967ce8"
     },
-    "askpass": {
-      "Package": "askpass",
-      "Version": "1.2.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "sys"
-      ],
-      "Hash": "cad6cf7f1d5f6e906700b9d3e718c796"
-    },
     "assertthat": {
       "Package": "assertthat",
       "Version": "0.2.1",
@@ -117,17 +107,6 @@
       "Source": "Repository",
       "Repository": "RSPM",
       "Hash": "976cf154dfb043c012d87cddd8bca363"
-    },
-    "cachem": {
-      "Package": "cachem",
-      "Version": "1.0.8",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Requirements": [
-        "fastmap",
-        "rlang"
-      ],
-      "Hash": "c35768291560ce302c0a6589f92e837d"
     },
     "callr": {
       "Package": "callr",
@@ -208,16 +187,6 @@
         "utils"
       ],
       "Hash": "e8a1e41acf02548751f45c718d55aa6a"
-    },
-    "curl": {
-      "Package": "curl",
-      "Version": "5.1.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R"
-      ],
-      "Hash": "9123f3ef96a2c1a93927d828b2fe7d4c"
     },
     "desc": {
       "Package": "desc",
@@ -339,13 +308,6 @@
       ],
       "Hash": "3e8583a60163b4bc1a80016e63b9959e"
     },
-    "fastmap": {
-      "Package": "fastmap",
-      "Version": "1.1.1",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Hash": "f7736a18de97dea803bde0a2daaafb27"
-    },
     "fs": {
       "Package": "fs",
       "Version": "1.6.3",
@@ -367,18 +329,6 @@
         "methods"
       ],
       "Hash": "15e9634c0fcd294799e9b2e929ed1b86"
-    },
-    "geosphere": {
-      "Package": "geosphere",
-      "Version": "1.5-18",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Requirements": [
-        "R",
-        "Rcpp",
-        "sp"
-      ],
-      "Hash": "45aa4def70a402e7d20efde490c13ecb"
     },
     "glue": {
       "Package": "glue",
@@ -405,21 +355,6 @@
       ],
       "Hash": "b59377caa7ed00fa41808342002138f9"
     },
-    "httr": {
-      "Package": "httr",
-      "Version": "1.4.7",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "R6",
-        "curl",
-        "jsonlite",
-        "mime",
-        "openssl"
-      ],
-      "Hash": "ac107251d9d9fd72f0ca8049988f1d7f"
-    },
     "jsonlite": {
       "Package": "jsonlite",
       "Version": "1.8.7",
@@ -429,21 +364,6 @@
         "methods"
       ],
       "Hash": "266a20443ca13c65688b2116d5220f76"
-    },
-    "lattice": {
-      "Package": "lattice",
-      "Version": "0.22-5",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "grDevices",
-        "graphics",
-        "grid",
-        "stats",
-        "utils"
-      ],
-      "Hash": "7c5e89f04e72d6611c77451f6331a091"
     },
     "lifecycle": {
       "Package": "lifecycle",
@@ -481,46 +401,6 @@
       ],
       "Hash": "7ce2733a9826b3aeb1775d56fd305472"
     },
-    "memoise": {
-      "Package": "memoise",
-      "Version": "2.0.1",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Requirements": [
-        "cachem",
-        "rlang"
-      ],
-      "Hash": "e2817ccf4a065c5d9d7f2cfbe7c1d78c"
-    },
-    "mime": {
-      "Package": "mime",
-      "Version": "0.12",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Requirements": [
-        "tools"
-      ],
-      "Hash": "18e9c28c1d3ca1560ce30658b22ce104"
-    },
-    "move": {
-      "Package": "move",
-      "Version": "4.2.4",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "Rcpp",
-        "geosphere",
-        "httr",
-        "memoise",
-        "methods",
-        "raster",
-        "sp",
-        "terra",
-        "xml2"
-      ],
-      "Hash": "2b9575bf29b9289fe6769823bc9a5842"
-    },
     "move2": {
       "Package": "move2",
       "Version": "0.2.6",
@@ -542,16 +422,6 @@
         "vroom"
       ],
       "Hash": "33d8f016e9dd99b6b21659a167101135"
-    },
-    "openssl": {
-      "Package": "openssl",
-      "Version": "2.1.1",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "askpass"
-      ],
-      "Hash": "2a0dc8c6adfb6f032e4d4af82d258ab5"
     },
     "pillar": {
       "Package": "pillar",
@@ -685,20 +555,6 @@
       ],
       "Hash": "709d852d33178db54b17c722e5b1e594"
     },
-    "raster": {
-      "Package": "raster",
-      "Version": "3.6-26",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "Rcpp",
-        "methods",
-        "sp",
-        "terra"
-      ],
-      "Hash": "7d6eda494f34a644420ac1bfd2a8023a"
-    },
     "rematch2": {
       "Package": "rematch2",
       "Version": "2.1.2",
@@ -711,18 +567,13 @@
     },
     "renv": {
       "Package": "renv",
-      "Version": "0.17.3-62",
-      "Source": "GitHub",
-      "RemoteType": "github",
-      "RemoteHost": "api.github.com",
-      "RemoteUsername": "rstudio",
-      "RemoteRepo": "renv",
-      "RemoteRef": "0.17.3-62",
-      "RemoteSha": "bdafa4033ec3166aa1f36a4f02db8e3d09ca4ae0",
+      "Version": "1.0.3",
+      "Source": "Repository",
+      "Repository": "CRAN",
       "Requirements": [
         "utils"
       ],
-      "Hash": "0eec72194bf21b1fb3d2ecf09cf64b0f"
+      "Hash": "41b847654f567341725473431dd0d5ab"
     },
     "rlang": {
       "Package": "rlang",
@@ -784,42 +635,6 @@
         "utils"
       ],
       "Hash": "e2111252a76984ca50bf8d6314348681"
-    },
-    "sp": {
-      "Package": "sp",
-      "Version": "2.1-2",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "grDevices",
-        "graphics",
-        "grid",
-        "lattice",
-        "methods",
-        "stats",
-        "utils"
-      ],
-      "Hash": "40a9887191d33b2521a1d741f8c8aea2"
-    },
-    "sys": {
-      "Package": "sys",
-      "Version": "3.4.2",
-      "Source": "Repository",
-      "Repository": "RSPM",
-      "Hash": "3a1be13d68d47a8cd0bfd74739ca1555"
-    },
-    "terra": {
-      "Package": "terra",
-      "Version": "1.7-55",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "Rcpp",
-        "methods"
-      ],
-      "Hash": "c011cc748506148c793428eb8ec101f9"
     },
     "testthat": {
       "Package": "testthat",
@@ -1019,17 +834,6 @@
         "R"
       ],
       "Hash": "f58cfa8d9c3a78a309d455a647dee853"
-    },
-    "xml2": {
-      "Package": "xml2",
-      "Version": "1.3.5",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Requirements": [
-        "R",
-        "methods"
-      ],
-      "Hash": "6c40e5cfcc6aefd88110666e18c31f40"
     }
   }
 }
