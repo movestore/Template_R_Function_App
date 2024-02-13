@@ -5,6 +5,7 @@
 - introduce `appspec.json` version `1.2`
     - removed `createsArtifacts`. It is safe to remove it completely from your `appspec.json` - MoveApps tries now to fetch artifacts for every running App.
     - verify to include the `null` option for setting types `DROPDOWN` and `RADIOBUTTONS` if `defaultValue` is set to `null`.
+- drop `move1` dependency
 
 ## 2023-12 `v3.0.5`
 
@@ -25,13 +26,13 @@
 
 ## 2023-07 `v3.0.1`
 
-- provide new move2 input files
+- provide new `move2` input files
 - minor fixes in src/io files
 
 
 ## 2023-06 `v3.0.0`
 
-- introduces template versioning (starting w/ `v3.0.0` as this is the third major iteraction)
+- introduces template versioning (starting w/ `v3.0.0` as this is the third major iteration)
 - introduces `dotenv` to control/adjust local app-development
 - updates developer readme
 - introduces a _Template Synchronization_ GH action. Use it to synchronize your forked app with template updates. If you already forked from the template _before_ SDK `v3.0.0` you can (*only use this option if your app is written for input data of class `move2`*): 
