@@ -29,7 +29,7 @@ rFunction = function(data, sdk, year, ...) {
   # Showcase to access a file ('auxiliary files') that is 
   # a) provided by the app-developer and 
   # b) can be overridden by the workflow user.
-  fileName <- getAuxiliaryFilePath("yourUserFileSettingId")
+  fileName <- getAuxiliaryFilePath("auxiliary-file_id-a")
   logger.info(readChar(fileName, file.info(fileName)$size))
 
   # provide my result to the next app in the MoveApps workflow

@@ -16,7 +16,7 @@
       "type": "INTEGER"
     },
     {
-      "id": "yourUserFileSettingId",
+      "id": "auxiliary-file_id-a",
       "name": "Personalization",
       "description": "You can personalize the dashboard by providing a file named 'sample.txt'",
       "type": "USER_FILE"
@@ -34,8 +34,8 @@
   },
   "providedAppFiles": [
     {
-      "settingId": "yourUserFileSettingId",
-      "from": "data/local-app-files/provided-app-files/yourUserFileSettingId/"
+      "settingId": "auxiliary-file_id-a",
+      "from": "data/local-app-files/provided-app-files/auxiliary-file_id-a/"
     }
   ],
   "license": {
