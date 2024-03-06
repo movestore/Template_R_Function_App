@@ -1,6 +1,7 @@
 source(file.path("..", "..", "src", "common", "logger.R"))
 source(file.path("..", "..", "src", "io", "app_files.R"))
 source(file.path("..", "..", "src", "io", "io_handler.R"))
-Sys.setenv("LOCAL_APP_FILES_DIR" = "../../data/local-app-files")
+Sys.setenv("USER_APP_FILE_HOME_DIR" = "../../data/auxiliary")
+Sys.setenv("LOCAL_APP_FILES_DIR" = "../../data/auxiliary")
 # the system under test (sut)
 source(file.path("..", "..", "./RFunction.R"))
