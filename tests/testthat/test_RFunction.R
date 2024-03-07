@@ -2,8 +2,7 @@ test_data <- test_data("input3_move2loc_LatLon.rds")
 
 test_that("happy path", {
   actual <- rFunction(data = test_data, sdk = "unit test", year = 1998)
-  # TODO: how to select the column of timestamps in a move2 object?
-  expect_equal(unique(lubridate::year(actual@timestamps)), 1998)
+  expect_equal(unique(lubridate::year(mt_time(actual))), 1998)
 })
 
 test_that("year not included", {
