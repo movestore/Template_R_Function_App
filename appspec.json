@@ -1,24 +1,134 @@
 {
-  "version": "1.2",
   "settings": [
-    {
-      "id": "sdk",
-      "name": "The name of the MoveApps SDK",
-      "description": "Showcase requesting a string input from the users of your app.",
-      "defaultValue": "MoveApps SDK",
-      "type": "STRING"
+	{
+      "id": "meth",
+      "name": "Cluster Method",
+      "description": "Select which clustering method you want to use. See details in the App's documentation.",
+      "defaultValue": "buff",
+      "type": "RADIOBUTTONS",
+      "options": [
+		{
+          "value": "buff",
+          "displayText": "Buffer clustering with overlap union."
+        },
+		{
+          "value": "hclust",
+          "displayText": "Hierarchical clustering with average linkage."
+        }
+      ]
     },
-    {
-      "id": "year",
-      "name": "The year",
-      "description": "Insert description for the year setting setting",
-      "defaultValue": 2022,
-      "type": "INTEGER"
+	{
+      "id": "rad",
+      "name": "Cluster radius",
+      "description": "Define the radius (in m) within which your locations shall lie to define a cluster. Defaults to 200 m.",
+      "defaultValue": 200,
+      "type": "DOUBLE"
     },
-    {
-      "id": "auxiliary-file-a",
-      "name": "Personalization",
-      "description": "You can personalize the app by providing a file",
+	{
+      "id": "dur",
+      "name": "Minimum duration at a cluster",
+      "description": "Provide the minimum time duration (select unit below) that your animals need to be present at a cluster for including it in your results. Defaults to 1 (day).",
+      "defaultValue": 1,
+      "type": "DOUBLE"
+    },
+	{
+      "id": "dur_unit",
+      "name": "Time duration unit",
+      "description": "Select the unit for your duration time variable.",
+      "defaultValue": "days",
+      "type": "DROPDOWN",
+      "options": [
+		{
+          "value": "mins",
+          "displayText": "minute(s)"
+        },
+        {
+          "value": "hours",
+          "displayText": "hour(s)"
+        },
+		{
+          "value": "days",
+          "displayText": "day(s)"
+        },
+		{
+          "value": "weeks",
+          "displayText": "week(s)"
+        }
+      ]
+    },
+	{
+      "id": "minloc",
+      "name": "Minimum number of locations building a cluster",
+      "description": "Provide the minimum number of locations that you want to make up a cluster for including it in your results. Defaults to 1 location.",
+      "defaultValue": 1,
+      "type": "DOUBLE"
+    },
+	{
+      "id": "maxgap",
+      "name": "Maximim gap duration between locations in a cluster",
+      "description": "Provide the maximum time gap that you allow between locations in a cluster (indep. of individual). Clusters will be split if there are larger gaps. See unit below. Defaults to 1 (day).",
+      "defaultValue": 1,
+      "type": "DOUBLE"
+    },
+	{
+      "id": "gap_unit",
+      "name": "Gap duration unit",
+      "description": "Select the unit for your gap duration time variable.",
+      "defaultValue": "days",
+      "type": "DROPDOWN",
+      "options": [
+		{
+          "value": "mins",
+          "displayText": "minute(s)"
+        },
+        {
+          "value": "hours",
+          "displayText": "hour(s)"
+        },
+		{
+          "value": "days",
+          "displayText": "day(s)"
+        },
+		{
+          "value": "weeks",
+          "displayText": "week(s)"
+        }
+      ]
+    },
+	{
+      "id": "clu_transm",
+      "name": "Cluster Transmission Mode",
+      "description": "Select if you want to pass on to the next App all found clusters or only those new ones that could not be detected with excluding the last Y hours of data (please define Y below). This setting is crucial to keep latency of data transmission to e.g. EarthRanger minimal.",
+      "defaultValue": "all",
+      "type": "RADIOBUTTONS",
+      "options": [
+		{
+          "value": "all",
+          "displayText": "Pass on all clusters."
+        },
+		{
+          "value": "new",
+          "displayText": "Pass on only new clusters."
+        }
+      ]
+    },
+	{
+      "id": "new_dur",
+      "name": "Y - number of hours representing 'new'",
+      "description": "Provide the number Y of hours that define 'new' clusters. This value will be used for 'Cluster Transmission Mode'. If one wants to pass on only new clusters, those that are also detected without the latest Y hours of data are excluded. Defaults to 24 (hours).",
+      "defaultValue": 24,
+      "type": "DOUBLE"
+    },
+	{
+      "id": "remo_sites",
+      "name": "Locations of nests, roost or other sites to remove.",
+      "description": "You can upload one comma separated csv-file(!) of any name with locations of nest sites, roosts or other known sites that you do not want to consider as cluster sites. They will be removed from the results. Note that the provided locations must be formatted as longitute/latitute in WGS84 projection, in decimal degrees and listed in two columns with headers called 'longitude' and 'latitude'. If no file is provided, then all clusters will be extracted.",
+      "type": "USER_FILE"
+    },
+	{
+      "id": "track_fixrates",
+      "name": "Fix rates of included tracks.",
+      "description": "You can upload one comma separated csv-file(!) of any name with fix rates of the used tracks. They will be added to the output file (passed on to the next App) and the file `Points_with_Clusters.csv`. Note that the track IDs must be written exactly as in the data set. If unsure, please check the Cargo Agent of the preceding App. Note furthermore that the provided fixrates must be in the unit `per hour` and columns must be called 'trackid' and 'fixrate'. If no file is provided, then nothing will be added to the result files.",
       "type": "USER_FILE"
     }
   ],
@@ -27,51 +137,65 @@
       {
         "name": "lubridate"
       },
-      {
+	  {
         "name": "move2"
+      },
+      {
+        "name": "geodist"
+      },
+	  {
+        "name": "lutz"
+      },
+	  {
+        "name": "sf"
+      },
+	  {
+        "name": "terra"
       }
     ]
   },
-  "providedAppFiles": [
-    {
-      "settingId": "auxiliary-file-a",
-      "from": "data/auxiliary/user-files/provided-app-files/auxiliary-file-a/sample.txt"
-    }
-  ],
+  "createsArtifacts": true,
   "license": {
     "key": "MIT"
   },
   "language": "eng",
   "keywords": [
-    "example",
-    "template"
+    "cluster",
+    "point cluster",
+	"multiple animal cluser",
+    "cluster use",
+	"cluster revisitation",
+	"animal movement"
   ],
   "people": [
     {
-      "firstName": "Charles",
+      "firstName": "Andrea",
       "middleInitials": null,
-      "lastName": "Darwin",
-      "email": "creator@example.com",
-      "roles": [
-        "author",
-        "creator"
-      ],
-      "orcid": null,
-      "affiliation": null,
-      "affiliationRor": null
+      "lastName": "Kölzsch",
+      "email": "akoelzsch@ab.mpg.de",
+      "roles": ["author", "creator"],
+      "orcid": "0000-0003-0193-1563",
+      "affiliation": "Max-Planck-Institute of Animal Behavior",
+      "affiliationRor": "https://ror.org/026stee22"
+    },
+		{
+      "firstName": "Corinne",
+      "middleInitials": null,
+      "lastName": "Kendall",
+      "email": "Corinne.Kendall@nczoo.org",
+      "roles": ["contributor","funder"],
+      "orcid": "",
+      "affiliation": "North Carolina Zoo",
+      "affiliationRor": ""
     }
   ],
   "funding": [
-    {
-      "name": "funder name",
-      "comment": "grant for App"
-    }
+	{
+	"name": "Wildlife Protection Solutions",
+	"comment": "grant for Location Cluster Workflow (to North Carolina Zoo)"
+	}
   ],
-  "references": [
-    {
-      "type": "IsDescribedBy",
-      "note": "Darwin, C. 1900. The creation. Journal XY. 1-2",
-      "url": "https://anylink.xyz"
-    }
-  ]
+  "documentation" : {
+    "url": "https://github.com/movestore/Point-Cluster-Detection/blob/main/README.md"
+  }
 }
