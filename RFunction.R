@@ -21,7 +21,7 @@ rFunction = function(data, sdk, year, ...) {
     artifact <- appArtifactPath("plot.png")
     logger.info(paste("plotting to artifact:", artifact))
     png(artifact)
-    plot(result)
+    plot(result[mt_track_id_column(result)], max.plot=1)
     dev.off()
   } else {
     logger.warn("nothing to plot")
