@@ -2,27 +2,27 @@
 
 MoveApps
 
-Github repository: *github.com/yourAccount/Name-of-App* *(the link to the repository where the code of the app can be found must be provided)*
+Github repository: *github.com/yourAccount/Name-of-App* *(provide the link to the repository where the code of the App can be found)*
 
 ## Description
-*Enter here the short description of the App that might also be used when filling out the description when submitting the App to Moveapps. This text is directly presented to Users that look through the list of Apps when compiling Workflows.*
+*Enter here the short description of the App that might also be used when filling out the description during App submission to Moveapps. This text is directly presented to Users that look through the list of Apps when compiling Workflows.*
 
 ## Documentation
-*Enter here a detailed description of your App. What is it intended to be used for. Which steps of analyses are performed and how. Please be explicit about any detail that is important for use and understanding of the App and its outcomes.*
+*Enter here a detailed description of your App. What is it intended to be used for. Which steps of analyses are performed and how. Please be explicit about any detail that is important for use and understanding of the App and its outcomes. You might also refer to the sections below.*
 
 ### Application scope
-#### Generalization of the App
-*State here if the App was developed for a specific species, taxa or taxonomic group, or to answer a specific question. This will help the user understand why the App might be producing non or odd results. Examples:*
+#### Generality of App usability
+*State here if the App was developed for a specific species, taxon or taxonomic group, or to answer a specific question. This will help the user to understand why the App might be producing no or odd results. Examples:*
 This App was developed using data of birds. 
 This App was developed using data of red deer. 
 This App was developed for any taxonomic group. 
-This App was developed to identify kill sites but could probably be used to identify any kind of locations cluster like a nest, den, drinking hole.
+This App was developed to identify kill sites, but can probably be used to identify any kind of location clusters like nests, dens or drinking holes.
 
-#### Ideal data properties
-*State here the ideal data properties for this App to work. Examples:*
-This App only is applicable to data that reflect range resident behavior. 
-The data should have a fix rate of at least 30min. 
-The App should work for any kind of data.
+#### Required data properties
+*State here the required and/or optimal data properties for this App to perform properly. Examples:*
+This App is only applicable to data that reflect range resident behavior. 
+The data should have a fix rate of at least 1 location per 30 minutes. 
+The App should work for any kind of (location) data.
 
 ### Input type
 *Indicate which type of input data the App requires.*
@@ -30,7 +30,7 @@ The App should work for any kind of data.
 *Example*: `move2::move2_loc`
 
 ### Output type
-*Indicate which type of output data the App produces to be passed on to subsequent apps.*
+*Indicate which type of output data the App produces to be passed on to subsequent Apps.*
 
 *Example:* `move2::move2_loc`
 
@@ -45,8 +45,8 @@ The App should work for any kind of data.
 *Example:* `Radius of resting site` (radius): Defined radius the animal has to stay in for a given duration of time for it to be considered resting site. Unit: `metres`.
 
 ### Changes in output data
-*State here how and if the App has modified the input data. Examples:*
-The App adds to the input data the columns `Max_dist` and `Avg_dist`. 
+*Specify here how and if the App modifies the input data. Describe clearly what e.g. each additional column means. Examples:*
+The App adds to the input data the columns `Max_dist` and `Avg_dist`. They contain the maximum distance to the provided focal location and the average distance to it over all locations. 
 The App filterers the input data as selected by the user. 
 The output data is the outcome of the model applied to the input data. 
 The input data remains unchanged.
