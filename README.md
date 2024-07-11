@@ -12,9 +12,9 @@ Github repository: *github.com/yourAccount/Name-of-App* *(provide the link to th
 
 ### Application scope
 #### Generality of App usability
-*State here if the App was developed for a specific species, taxon or taxonomic group, or to answer a specific question. How might it influence the scope and utility of the App. This information will help the user to understand why the App might be producing no or odd results. 
+*State here if the App was developed for a specific species, taxon or taxonomic group, or to answer a specific question. How might it influence the scope and utility of the App. This information will help the user to understand why the App might be producing no or odd results.*
 
-Examples:*
+*Examples:*
 
 This App was developed using data of birds. 
 
@@ -25,9 +25,9 @@ This App was developed for any taxonomic group.
 This App was developed to identify kill sites, but can probably be used to identify any kind of location clusters like nests, dens or drinking holes.
 
 #### Required data properties
-*State here the required and/or optimal data properties for this App to perform properly. 
+*State here the required and/or optimal data properties for this App to perform properly.*
 
-Examples:*
+*Examples:*
 
 This App is only applicable to data that reflect range resident behavior. 
 
@@ -56,9 +56,9 @@ The App should work for any kind of (location) data.
 *Example:* `Radius of resting site` (radius): Defined radius the animal has to stay in for a given duration of time for it to be considered resting site. Unit: `metres`.
 
 ### Changes in output data
-*Specify here how and if the App modifies the input data. Describe clearly what e.g. each additional column means.
+*Specify here how and if the App modifies the input data. Describe clearly what e.g. each additional column means.*
 
-Examples:*
+*Examples:*
 
 The App adds to the input data the columns `Max_dist` and `Avg_dist`. They contain the maximum distance to the provided focal location and the average distance to it over all locations. 
 
