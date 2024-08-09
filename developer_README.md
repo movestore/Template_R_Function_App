@@ -1,12 +1,12 @@
 # MoveApps R Software Development Kit (SDK)
 
-***NOTE*: this SDK only supports code written for input data of class `move2` and not `moveStack`, as all input data of class `moveStack` will be converted to class `move2`. For all other input/output types, this SDK works as usual. Please contact us under support@moveapps.org if you have any questions.**
+***NOTE*: this SDK supports code written for input data of class `move2` and not `moveStack`, as all input data of class `moveStack` will be converted to class `move2`. For all other input/output types, this SDK works as usual. Please contact us under support@moveapps.org if you have any questions.**
 
 This documentation provides a short introduction to the [MoveApps](https://www.moveapps.org) **R SDK**.
 
 As a first step, and before your read this, you should have used this GitHub template to create a copy of it in your personal space and named the repository as your App will be named in MoveApps.
 
-The[MoveApps User Manual](https://docs.moveapps.org/#/create_app) provides a step-by-step explanation of how to create an App.
+The [MoveApps User Manual](https://docs.moveapps.org/#/create_app) provides a step-by-step explanation of how to create an App.
 
 # Overview
 
@@ -14,41 +14,7 @@ This template is designed according to a file structure that is necessary for yo
 
 A stepwise explanation below indicates the function and some background of each file and folder.
 
-## File structure
-
-(truncated)
-
-```
-.
-├── Dockerfile
-├── README.md
-├── RFunction.R
-├── Template_R_Function_App.Rproj
-├── app-configuration.json
-├── appspec.json
-├── data
-│   ├── auxiliary
-│   ├── output
-│   └── raw
-│       ├── input1.rds
-│       ├── input2.rds
-│       ├── input3.rds
-│       └── input4.rds
-├── renv.lock
-├── sdk.R
-├── src
-│   ├── common
-│   │   ├── logger.R
-│   │   └── runtime_configuration.R
-│   ├── io
-│   │   ├── app_files.R
-│   │   ├── io_handler.R
-│   │   └── rds.R
-│   └── moveapps.R
-└── start-process.sh
-
-
-```
+## File description
 
 1. `./RFunction.R`: This is the entrypoint for your App logic. MoveApps will call this function during a Workflow execution which includes your App. **The file must be named `RFunction.R`, do not alter it!**
 1. `./appspec.json`: This file defines the settings and metadata of your App, for details refer to the [MoveApps User Manual](https://docs.moveapps.org/#/appspec)
@@ -95,13 +61,6 @@ Which files will be bundled into the final App running on MoveApps?
 Nothing else.
 
 Note that many App features will be set and updated with information from the `appspec.json` in each new App version. Thus, even if not bundled into the App, this file is required and must be up to date.
-
-
-## App development
-
-1. Execute `Rscript sdk.R` (on a terminal) or run/source `sdk.R` in _RStudio_
-1. Ensure the sdk executes the vanilla template App code. Everything is set up correctly if no error occurs and you see something like _Welcome to the MoveApps R SDK._
-1. Begin with your App development in `./RFunction.R`
 
 
 ## R packages management / renv (optional)
