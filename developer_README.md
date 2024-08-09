@@ -1,16 +1,18 @@
 # MoveApps R Software Development Kit (SDK)
 
-#### ***NOTE*: this SDK only supports code written for input data of class `move2` and not `moveStack`, as all input data of class `moveStack` will be converted to class `move2`. For all other input/output types, this SDK works as usual. Please contact us under support@moveapps.org if you have any questions.**
+***NOTE*: this SDK only supports code written for input data of class `move2` and not `moveStack`, as all input data of class `moveStack` will be converted to class `move2`. For all other input/output types, this SDK works as usual. Please contact us under support@moveapps.org if you have any questions.**
 
 This documentation provides a short introduction to the [MoveApps](https://www.moveapps.org) **R SDK**.
 
 As a first step, and before your read this, you should have used this GitHub template to create a copy of it in your personal space and named the repository as your App will be named in MoveApps.
 
-A general overview provides the [MoveApps user manual](https://docs.moveapps.org/#/create_app)
+The[MoveApps User Manual](https://docs.moveapps.org/#/create_app) provides a step-by-step explanation of how to create an App.
 
 # Overview
 
-This template is designed according to a file structure that is necessary for your App to run in your local development environment similar to the way it will run in the MoveApps environment later. Please contain the structure and only change/add files as necessary for your App's functionality. See below which files can be changed and which should remain as is for simulation of the behaviour on MoveApps on your local system. A stepwise explanation below indicates the function and some background of each file and folder.
+This template is designed according to a file structure that is necessary for your App to run in your local development environment similar to the way it will run in the MoveApps environment later. Please contain the structure and only change/add files as necessary for your App's functionality. Take a look at the [overview in the User Manual](https://docs.moveapps.org/#/create_app?id=how-to-create-an-r-or-rshiny-app) to see which files can be changed and which should remain as is for simulation of the behaviour on MoveApps on your local system.
+
+A stepwise explanation below indicates the function and some background of each file and folder.
 
 ## File structure
 
@@ -48,7 +50,7 @@ This template is designed according to a file structure that is necessary for yo
 
 ```
 
-1. `./RFunction.R`: This is the entrypoint for your App logic. MoveApps will call this function during a workflow execution which includes your App. **The file must be named `RFunction.R`, do not alter it!**
+1. `./RFunction.R`: This is the entrypoint for your App logic. MoveApps will call this function during a Workflow execution which includes your App. **The file must be named `RFunction.R`, do not alter it!**
 1. `./appspec.json`: This file defines the settings and metadata of your App, for details refer to the [MoveApps User Manual](https://docs.moveapps.org/#/appspec)
 1. `./renv.lock`: Definition of the dependencies of your App. We use `renv` as library manager. Optional.
 1. `./data/**`: Resources of the SDK
@@ -101,105 +103,6 @@ Note that many App features will be set and updated with information from the `a
 1. Ensure the sdk executes the vanilla template App code. Everything is set up correctly if no error occurs and you see something like _Welcome to the MoveApps R SDK._
 1. Begin with your App development in `./RFunction.R`
 
-## Examples
-
-### Request App configuration from your users
-
-`./appspec.json`: define the settings UI on MoveApps. Users of your App can enter their configuration values.
-
-![img.png](documentation/app-configuration-ui.png)
-
-You can also use our [Settings Editor](https://www.moveapps.org/apps/settingseditor) to generate the App configuration
-
-```
-"settings": [
- {
-   "id": "line_width",
-   "name": "Line width",
-   "description": "The width of the lines in the plot.",
-   "defaultValue": 2,
-   "type": "INTEGER"
- },
- {
-   "id": "legend",
-   "name": "Include legend?",
-   "description": "Should the plot contain a legend?",
-   "defaultValue": false,
-   "type": "CHECKBOX"
- }
-],
-```
-
-`./app-configuration.json`: this is only needed during the app development to simulate an App run
-
-```
-{
-  "line_width": 2,
-  "legend": true
-}
-```
-
-`./RFunction.R`: your App will be called with the user's App configuration
-
-```
-rFunction = function(data, line_width, legend, ...) {
-}
-```
-
-`./tests/testthat/test_RFunction.R`: do not forget to test your App
-
-```
-test_data <- test_data("input3_stork.rds")
-
-test_that("happy path", {
-  actual <- rFunction(data = test_data, sdk = "unit test", year = 2005)
-  expect_equal(unique(lubridate::year(actual@timestamps)), 2005)
-})
-
-test_that("year not included", {
-  actual <- rFunction(data = test_data, sdk = "unit test", year = 2023)
-  expect_null(actual)
-})
-```
-
-### Produce an App artefact
-
-Your App can write files which the user can download after it has run.
-
-`./appspec.json`
-
-```
-  "createsArtifacts": true,
-```
-
-`./RFunction.R`
-
-```
-pdf(appArtifactPath("MorningReport_overviewTable.pdf"), paper = "a4r")
-```
-
-**Notice:** Only files are permitted to act as MoveApps App artifact! If your app produces a directory as an App artificat you have to bundle it eg. by zipping it. In other words: at the moment your App completes its work there must be only files present in `APP_ARTIFACTS_DIR`.
-
-#### example for zipping:
-```
-library('zip')
-dir.create(targetDirFiles <- tempdir())
-...
-# add any files to targetDirFiles
-...
-zip_file <- appArtifactPath(paste0("myfiles.zip"))
-zip::zip(zip_file, 
-    files = list.files(targetDirFiles, full.names = TRUE),
-    mode = "cherry-pick")
-```
-
-## Include files to your App
-
-[Details and examples about _auxiliary files_](https://docs.moveapps.org/#/auxiliary).
-
-This template also implements in `./RFunction.R` a showcase about this topics.
-
----
 
 ## R packages management / renv (optional)
 
@@ -217,6 +120,6 @@ You can [activate `renv` with `renv::activate()`](https://rstudio.github.io/renv
 1. execute the image with `docker run --platform=linux/amd64 --rm --name $MY_MOVEAPPS_APP -it $MY_MOVEAPPS_APP` (in your terminal)
 1. you will get a `bash` terminal of the running container. There you can get a R console by `R` or simply start your app by invoking `/home/moveapps/co-pilot-r/start-process.sh` (in the `bash` of the running container)
 
-## Synchronisation of your fork with this template
+## Synchronisation of your App repository with this template
 
-This template includes a _GitHub action_ to keep your fork synchronized with the original template (aka the MoveApps R SDK). The synchronization action creates a _GitHub pull request_ in your fork from time to time in case the original template has changed.
+This template includes a _GitHub action_ to keep your copy synchronized with the original template. Take a look at the [documentation](https://docs.moveapps.org/#/manage_Rapp_github?id=keep-your-repositories-up-to-date-sync-with-templates) and make sure to keep your repository up-to-date.
