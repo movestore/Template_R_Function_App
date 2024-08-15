@@ -24,7 +24,7 @@ Here you find an overview of the files and their function in the SDK.
    1. `raw/**`: Collection of sample App input data. You can use these samples to simulate an App run with real input.
 1. `./sdk/**`: The (internal) MoveApps R SDK logic.
 1. `./sdk.R`: The main entry point of the SDK. Use it to execute your App in your compiler (e.g. RStudio).
-1. `./tests/**`: Location for *Unit Tests*. See [Step 4](https://docs.moveapps.org/#/create_py_app#=step-4-test-your-app-locally) of the User Manual.
+1. `./tests/**`: Location for *Unit Tests*. See [Step 4](https://docs.moveapps.org/#/create_app#=step-4-test-your-app-locally) of the User Manual.
 1. `.env`: defining the SDK Runtime environment, see below.
 
 ## SDK runtime environment
