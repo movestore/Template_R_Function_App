@@ -4,43 +4,40 @@
 
 This documentation provides a short introduction to the [MoveApps](https://www.moveapps.org) **R SDK**.
 
-As a first step, and before your read this, you should have used this GitHub template to create a copy of it in your personal space and named the repository as your App will be named in MoveApps.
+As a first step, and before your read this, you should have used this GitHub template to create a copy of it in your personal space and named the repository as your App will be named in MoveApps (please adhere to our convention of Title Case, e.g. My New App).
 
-The [MoveApps User Manual](https://docs.moveapps.org/#/create_app) provides a step-by-step explanation of how to create an App.
+**The [MoveApps User Manual](https://docs.moveapps.org/#/create_app) provides a step-by-step explanation of how to create an App.** Please carefully follow these steps when creating a MoveApps App.
 
-# Overview
 
-This template is designed according to a file structure that is necessary for your App to run in your local development environment similar to the way it will run in the MoveApps environment later. Please contain the structure and only change/add files as necessary for your App's functionality. Take a look at the [overview in the User Manual](https://docs.moveapps.org/#/create_app?id=how-to-create-an-r-or-rshiny-app) to see which files can be changed and which should remain as is for simulation of the behaviour on MoveApps on your local system.
+## Files in the SDK/template
 
-A stepwise explanation below indicates the function and some background of each file and folder.
+This template is designed according to a file structure that is necessary for your App to run in your local development environment similar to the way it will run in the MoveApps environment later. Please contain the structure and only change/add files as necessary for your App's functionality. Take a look at the [overview in the User Manual](https://docs.moveapps.org/#/create_app) to see which files can be changed and which should remain as is for simulation of the behaviour on MoveApps on your local system.
 
-## File description
+Here you find an overview of the files and their function in the SDK.
 
-1. `./RFunction.R`: This is the entrypoint for your App logic. MoveApps will call this function during a Workflow execution which includes your App. **The file must be named `RFunction.R`, do not alter it!**
-1. `./appspec.json`: This file defines the settings and metadata of your App, for details refer to the [MoveApps User Manual](https://docs.moveapps.org/#/appspec)
-1. `./renv.lock`: Definition of the dependencies of your App. We use `renv` as library manager. Optional.
+1. `./RFunction.R`: This is the entrypoint for your App logic. MoveApps will call this function during a Workflow execution which includes your App. The file must be named `RFunction.R`, do not alter it. See [Step 3](https://docs.moveapps.org/#/create_app#step-3-develop-the-app-code-locally-within-the-template) in the User Manual.
+1. `./appspec.json`: This file defines the settings and metadata of your App. See [Step 5](https://docs.moveapps.org/#/create_app#step-5-write-app-specifications) in the User Manual.
+1. `./renv.lock`: Definition of the dependencies of your App. We use `renv` as library manager. Optional, see below.
 1. `./data/**`: Resources of the SDK
-   1. `auxiliary/**`: Simulates the usage of [*auxiliary App files*](https://docs.moveapps.org/#/auxiliary). You can put files into this folder to simulate an App run with provided/user-uploaded files. 
-   1. `output/**`: If your App produces [*artefacts*](https://docs.moveapps.org/#/copilot-r-sdk?id=artefacts) they will be stored here.
+   1. `auxiliary/**`: Simulates the usage of [*auxiliary files*](https://docs.moveapps.org/#/auxiliary). You can put files into this folder to simulate an App run with provided/user-uploaded files. 
+   1. `output/**`: If your App produces output files (artifacts) they will be stored here. See [*producing artifacts*](https://docs.moveapps.org/#/copilot-r-sdk?id=producing-artefacts) for more information.
    1. `raw/**`: Collection of sample App input data. You can use these samples to simulate an App run with real input.
 1. `./sdk/**`: The (internal) MoveApps R SDK logic.
-1. `./sdk.R`: The main entry point of the SDK. Use it to execute your App in your IDE.
-1. `./tests/**`: Location for Unit Tests
+1. `./sdk.R`: The main entry point of the SDK. Use it to execute your App in your compiler (e.g. RStudio).
+1. `./tests/**`: Location for *Unit Tests*. See [Step 4](https://docs.moveapps.org/#/create_py_app#=step-4-test-your-app-locally) of the User Manual.
+1. `.env`: defining the SDK Runtime environment, see below.
 
-## SDK Runtime environment
+## SDK runtime environment
 
-Critical parts of the SDK can be adjusted by `environment variables`. 
-Keep in mind that these variables are only changeable during App development and not during an App run on MoveApps.
-They are predefined with sensible defaults - they should work for you as they are.
+Critical parts of the SDK can be adjusted by `environment variables`. Keep in mind that these variables are only changeable during App development and not during an App run on MoveApps. They are predefined with sensible defaults - they should work for you as they are.
 
-- `CONFIGURATION_FILE`: configuration of your App ([JSON](https://www.w3schools.com/js/js_json_intro.asp) - must correspondent with the `settings` of your `appspec.json`)
+- `CONFIGURATION_FILE`: path to the configuration/settings file of your App (in [JSON](https://www.w3schools.com/js/js_json_intro.asp) format - must correspondent with the `settings` of your `appspec.json`, see [MoveApps parameters](https://docs.moveapps.org/#/copilot-r-sdk.md#moveapps-parameters) for an example of the `app-configuration.json` file).
 - `PRINT_CONFIGURATION`: prints the configuration your App receives (`yes|no`)
 - `SOURCE_FILE`: path to an input file for your App during development
 - `OUTPUT_FILE`: path to the output file of your App
 - `ERROR_FILE`: path to a file collecting error messages
 - `APP_ARTIFACTS_DIR`: base directory for writing App artifacts
-- `USER_APP_FILE_HOME_DIR`: home aka base directory of your local user App files (*auxiliary*)
-- ~~`LOCAL_APP_FILES_DIR`~~: Deprecated! base directory of your local App files (*auxiliary*)
+- `USER_APP_FILE_HOME_DIR`: home aka base directory of your local user/auxiliary App files
 - `CLEAR_OUTPUT`: clears all output of the previously app run at each start of the SDK aka the next app start
 
 You can adjust these environment variables by adjusting the file `./.env`.
@@ -62,11 +59,14 @@ Nothing else.
 
 Note that many App features will be set and updated with information from the `appspec.json` in each new App version. Thus, even if not bundled into the App, this file is required and must be up to date.
 
+You are also required to write a documentation file (see [Step 6](https://docs.moveapps.org/#/create_app#step-6-write-a-documentation-file) in the User Manual).
+
 
 ## R packages management / renv (optional)
 
 The template is prepared to use [`renv` as a dependency manager](https://rstudio.github.io/renv/articles/renv.html) - but is disabled by default (_opt-in_).
 You can [activate `renv` with `renv::activate()`](https://rstudio.github.io/renv/articles/renv.html#uninstalling-renv) and then use it in the [usual `renv` workflow](https://rstudio.github.io/renv/articles/renv.html#workflow).
+
 
 ### Docker support (optional)
 
@@ -78,6 +78,7 @@ You can [activate `renv` with `renv::activate()`](https://rstudio.github.io/renv
 1. build the Docker image locally by `docker build --platform=linux/amd64 -t $MY_MOVEAPPS_APP .` (in your terminal)
 1. execute the image with `docker run --platform=linux/amd64 --rm --name $MY_MOVEAPPS_APP -it $MY_MOVEAPPS_APP` (in your terminal)
 1. you will get a `bash` terminal of the running container. There you can get a R console by `R` or simply start your app by invoking `/home/moveapps/co-pilot-r/start-process.sh` (in the `bash` of the running container)
+
 
 ## Synchronisation of your App repository with this template
 
