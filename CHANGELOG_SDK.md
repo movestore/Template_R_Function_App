@@ -1,6 +1,6 @@
 # Changelog SDK
 
-## 2024-07 `v3.3.0`
+## 2025-07 `v3.3.0`
 
 - introduce app-setting-type `SECRET`
 
