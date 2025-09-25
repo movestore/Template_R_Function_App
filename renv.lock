@@ -665,13 +665,13 @@
     },
     "jsonlite": {
       "Package": "jsonlite",
-      "Version": "1.8.9",
+      "Version": "2.0.0",
       "Source": "Repository",
       "Repository": "CRAN",
       "Requirements": [
         "methods"
       ],
-      "Hash": "4e993b65c2c3ffbffce7bb3e2c6f832b"
+      "Hash": "b0776f526d36d8bd4a3344a88fe165c4"
     },
     "knitr": {
       "Package": "knitr",
@@ -799,8 +799,11 @@
       "RemoteHost": "api.github.com",
       "RemoteRepo": "moveapps-sdk-r-package",
       "RemoteUsername": "movestore",
-      "RemoteSha": "fe2795b1bd2b1b9c64f835f3d45033bd297029a0",
-      "Hash": "7ac8ea10fcc21fc641270a80758644d3"
+      "RemoteSha": "1ff8936cab529b7b0c5a6bc686939ba8e6b0a4e6",
+      "Requirements": [
+        "jsonlite"
+      ],
+      "Hash": "7789243edbd2a2789e3a61c95fc8a746"
     },
     "openssl": {
       "Package": "openssl",
