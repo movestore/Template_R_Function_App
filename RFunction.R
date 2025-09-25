@@ -1,7 +1,3 @@
-library('moveapps')
-library('move2')
-library('lubridate')
-
 ## The parameter "data" is reserved for the data object passed on from the previous app
 
 # to display messages to the user in the log file of the App in MoveApps
@@ -11,8 +7,8 @@ library('lubridate')
 # Showcase injecting app setting (parameter `year`)
 rFunction = function(data, sdk, year, ...) {
   logger.info(paste("Welcome to the", sdk))
-  result <- if (any(lubridate::year(mt_time(data)) == year)) { 
-    data[lubridate::year(mt_time(data)) == year,]
+  result <- if (any(lubridate::year(move2::mt_time(data)) == year)) { 
+    data[lubridate::year(move2::mt_time(data)) == year,]
   } else {
     NULL
   }
@@ -22,7 +18,7 @@ rFunction = function(data, sdk, year, ...) {
     artifact <- appArtifactPath("plot.png")
     logger.info(paste("plotting to artifact:", artifact))
     png(artifact)
-    plot(result[mt_track_id_column(result)], max.plot=1)
+    plot(result[move2::mt_track_id_column(result)], max.plot=1)
     dev.off()
   } else {
     logger.warn("nothing to plot")
