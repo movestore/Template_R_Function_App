@@ -791,6 +791,17 @@
       ],
       "Hash": "3d30188ce75e46bd69cb764aa26b797e"
     },
+    "moveapps": {
+      "Package": "moveapps",
+      "Version": "0.1.0",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteRepo": "moveapps-sdk-r-package",
+      "RemoteUsername": "movestore",
+      "RemoteSha": "fe2795b1bd2b1b9c64f835f3d45033bd297029a0",
+      "Hash": "7ac8ea10fcc21fc641270a80758644d3"
+    },
     "openssl": {
       "Package": "openssl",
       "Version": "2.3.3",

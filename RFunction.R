@@ -1,3 +1,4 @@
+library('moveapps')
 library('move2')
 library('lubridate')
 

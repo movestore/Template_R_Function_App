@@ -1,17 +1,19 @@
-library(dotenv)
 # You can control your local app development via environment variables.
 # You can define things like input-data, app-configuration etc.
 # Per default your environment is defined in `/.env`
-load_dot_env()
+dotenv::load_dot_env()
 
-# provide common stuff
-source("src/common/logger.R")
-source("src/common/runtime_configuration.R")
-clearRecentOutput()
+# This loads and installs the MoveApps R SDK
+devtools::install_github("movestore/moveapps-sdk-r-package")
+moveapps::clearRecentOutput()
+
 # This will parse a JSON file containing the concrete configuration of
 # the app run. Per default the file `/app-configuration.json` will be parsed.
-args <- configuration()
+args <- moveapps::configuration()
+
+# `./RFunction.R` is the home of your app code
+# It is the only file which will be bundled into the final app on MoveApps
+source("RFunction.R")
 
 # Lets simulate running your app on MoveApps
-source("src/moveapps.R")
-simulateMoveAppsRun(args)
+moveapps::simulateMoveAppsRun(args)
