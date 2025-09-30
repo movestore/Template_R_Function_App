@@ -13,6 +13,7 @@ moveapps::clearRecentOutput()
 args <- moveapps::configuration()
 
 library("moveapps")
+Sys.setenv(tz="UTC")
 # `./RFunction.R` is the home of your app code
 # It is the only file which will be bundled into the final app on MoveApps
 source("RFunction.R")
