@@ -8,10 +8,6 @@ devtools::install_github("movestore/moveapps-sdk-r-package")
 moveapps::logger.init()
 moveapps::clearRecentOutput()
 
-# This will parse a JSON file containing the concrete configuration of
-# the app run. Per default the file `/app-configuration.json` will be parsed.
-args <- moveapps::configuration()
-
 library("moveapps")
 Sys.setenv(tz="UTC")
 # `./RFunction.R` is the home of your app code
@@ -19,4 +15,4 @@ Sys.setenv(tz="UTC")
 source("RFunction.R")
 
 # Lets simulate running your app on MoveApps
-moveapps::simulateMoveAppsRun(args)
+moveapps::runMoveAppsApp()
