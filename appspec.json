@@ -28,7 +28,7 @@
         "name": "lubridate"
       },
       {
-        "name": "move2"
+        "remotes": "install_git('https://gitlab.com/bartk/move2.git')"
       }
     ]
   },
