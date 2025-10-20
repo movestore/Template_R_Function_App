@@ -15,7 +15,7 @@ This template is designed according to a file structure that is necessary for yo
 
 Here you find an overview of the files and their function in the SDK:
 
-1. `./RFunction.R`: must be modified by the developer. This is the entrypoint for your App logic. MoveApps will call this function during a Workflow execution which includes your App. The file must be named `RFunction.R`, do not alter it. See [Step 3](https://docs.moveapps.org/#/create_app#step-3-develop-the-app-code-locally-within-the-template) in the User Manual.
+1. `./RFunction.R`: must be modified by the developer. This is the entrypoint for your App logic. MoveApps will call this function during a Workflow execution which includes your App. The file must be named `RFunction.R`, do not alter it. It is also possible to source additional R scripts. See [Step 3](https://docs.moveapps.org/#/create_app#step-3-develop-the-app-code-locally-within-the-template) in the User Manual.
 1. `./appspec.json`: must be modified by the developer. This file defines the settings and metadata of your App. See [Step 6](https://docs.moveapps.org/#/create_app?id=step-6-write-app-specifications) in the User Manual.
 1. `./README.md`: must be modified by the developer. Provided template for the documentation of the App (see [Step 7](https://docs.moveapps.org/#/create_app?id=step-7-write-a-documentation-file) in the User Manual).
 1. `./tests/**`: must be modified by the developer. Location for *Unit Tests*. See [Step 5](https://docs.moveapps.org/#/create_app?id=step-5-unit-tests) of the User Manual.
@@ -33,7 +33,7 @@ Here you find an overview of the files and their function in the SDK:
 
 Critical parts of the SDK can be adjusted by `environment variables`. Keep in mind that these variables are only changeable during App development and not during an App run on MoveApps. They are predefined with sensible defaults - they should work for you as they are. While testing your App you will want to modify the `SOURCE_FILE` variable to either call the different example data sets provided in the template or other data sets that you want to use to test your App.
 
-- `CONFIGURATION_FILE`: path to the configuration/settings file of your App (in [JSON](https://www.w3schools.com/js/js_json_intro.asp) format - must correspondent with the `settings` of your `appspec.json`, see [MoveApps parameters](https://docs.moveapps.org/#/copilot-r-sdk.md#moveapps-parameters) for an example of the `app-configuration.json` file).
+- `CONFIGURATION`: path to the configuration/settings file of your App (in [JSON](https://www.w3schools.com/js/js_json_intro.asp) format - must correspondent with the `settings` of your `appspec.json`, see [MoveApps parameters](https://docs.moveapps.org/#/copilot-r-sdk.md#moveapps-parameters) for an example of the `app-configuration.json` file).
 - `PRINT_CONFIGURATION`: prints the configuration your App receives (`yes|no`)
 - `SOURCE_FILE`: path to an input file for your App during development
 - `OUTPUT_FILE`: path to the output file of your App
@@ -55,7 +55,8 @@ The file `./.env` is **hidden** by default in `RStudio`! You can show it by
 
 Which files will be bundled into the final App running on MoveApps?
 
-- the file `./RFunction.R
+- the file `./RFunction.R`
+- everything inside the `./src/app/` directory. You have to ensure you source any scripts in this (sub)directory yourself. You can do this by defining, for example, `source(./src/app/common/common.R)` in your `RFunction()`.
 - all directories defined in your `appspec.json` at `providedAppFiles`
 
 - the file `./appspec.json` will be used to build and create the metadata of your App
