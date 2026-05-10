@@ -1,0 +1,37 @@
+FROM rocker/r-ver:latest
+
+LABEL org.opencontainers.image.authors="us@couchbits.com"
+LABEL org.opencontainers.image.vendor="couchbits GmbH"
+
+ENV PROJECT_DIR=/moveapps-r-sdk
+ENV RENV_PATHS_CACHE=/renv/cache
+
+RUN apt-get update && apt-get install -y \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    libxml2-dev \ 
+    libudunits2-dev \
+    libgdal-dev
+
+# Create the project directory
+RUN mkdir -p $PROJECT_DIR
+
+# Set the working directory
+WORKDIR $PROJECT_DIR
+
+# Copy necessary files
+COPY renv.lock ./
+COPY sdk.R ./
+COPY src/ ./src/
+COPY data/ ./data/
+COPY tests/ ./tests/
+COPY RFunction.R ./
+
+# Install renv and restore packages
+RUN R -e 'install.packages("renv")' && \
+    R -e 'renv::consent(provided = TRUE); renv::restore()' && \
+    R -e 'renv::clean()'
+
+# Run tests
+RUN R -e 'install.packages("testthat")' && \
+    R -e 'testthat::test_dir("tests")'
