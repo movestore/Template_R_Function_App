@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.0.2] - 2026-09
+
+### Changed
+- Updated `README.md` including new sections
+- Updated `move2` and `telemetry list` input files
+
 ## [4.0.1] - 2026-09
 
 ### Added
