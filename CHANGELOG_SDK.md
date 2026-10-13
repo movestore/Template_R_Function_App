@@ -8,6 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.1.0] - 2026-10
+
+### Added
+- Example in `sdk.R`: run your App locally with other settings than in `app-configuration.json`, e.g. with personal credentials from `personal.env`, via `moveapps::runMoveAppsApp(args)`. This replaces overriding `args` in `sdk.R`, which fails since `4.0.0` with "object of type 'closure' is not subsettable"
+- `personal.env` in `.gitignore`
+
+### Changed
+- Upgraded the [`moveapps`](https://github.com/movestore/moveapps-sdk-r-package) SDK package to `v1.2.0`
+
 ## [4.0.2] - 2026-09
 
 ### Changed
